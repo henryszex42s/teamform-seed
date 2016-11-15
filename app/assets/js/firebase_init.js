@@ -1,6 +1,4 @@
-function() {
-	
-  // Initialize Firebase
+(function() {
   var config = {
     apiKey: "AIzaSyDRwTjOiH_DUPfAHdwTMPTLjB9qn7iKMS4",
     authDomain: "light-of-wisdom-7d1ea.firebaseapp.com",
@@ -9,6 +7,4 @@ function() {
     messagingSenderId: "411144932773"
   };
   firebase.initializeApp(config);
-  
-
-}    
+})();    

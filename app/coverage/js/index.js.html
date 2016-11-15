@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">56.52% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/24</span>
+        <span class='fraction'>13/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">56.52% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/24</span>
+        <span class='fraction'>13/23</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -100,19 +100,21 @@
 55
 56
 57
-58</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -125,25 +127,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,19 +159,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">angular.module('teamform-index-app', ['firebase'])
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+&nbsp;
+angular.module('teamform-index-app', ['firebase'])
 .controller('IndexCtrl', ['$scope', '$firebaseObject', '$firebaseArray','$window', function($scope, $firebaseObject, $firebaseArray,$window) {
     
-    initalizeFirebase();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var eventRef, refPath;</span>
+    var eventRef, refPath;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    refPath = "/event/"</span>
-<span class="cstat-no" title="statement not covered" >    eventRef = firebase.database().ref(refPath);</span>
-<span class="cstat-no" title="statement not covered" >    $scope.events = [];</span>
-<span class="cstat-no" title="statement not covered" >    $scope.events = $firebaseArray(eventRef);</span>
+    refPath = "/event/"
+    eventRef = firebase.database().ref(refPath);
+    $scope.events = [];
+    $scope.events = $firebaseArray(eventRef);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    firebase.auth().onAuthStateChanged(<span class="fstat-no" title="function not covered" >function(user) {</span></span>
+    firebase.auth().onAuthStateChanged(<span class="fstat-no" title="function not covered" >function(user) {</span>
 <span class="cstat-no" title="statement not covered" >    if (user) {</span>
 <span class="cstat-no" title="statement not covered" >        var userPath = "/user/" + user.uid;</span>
 <span class="cstat-no" title="statement not covered" >        var userref = firebase.database().ref(userPath);</span>
@@ -182,17 +185,17 @@
     });
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    $scope.viewevent = <span class="fstat-no" title="function not covered" >function(eventname) {</span></span>
+    $scope.viewevent = function(eventname) {
         // Finally, go back to the front-end
-<span class="cstat-no" title="statement not covered" >        if(eventname != 'null')</span>
+        if(eventname != "")
         {
-<span class="cstat-no" title="statement not covered" >            window.location.href= "event.html?q=" + eventname;</span>
-<span class="cstat-no" title="statement not covered" >            return true;</span>
+            window.location.href= "event.html?q=" + eventname;
+            return true;
             
         }
         else
         {
-<span class="cstat-no" title="statement not covered" >            return false;</span>
+            return false;
         }
 &nbsp;
 &nbsp;
@@ -200,7 +203,7 @@
 &nbsp;
 &nbsp;
     //Logout
-<span class="cstat-no" title="statement not covered" >    $scope.logout = <span class="fstat-no" title="function not covered" >function(){</span></span>
+    $scope.logout = <span class="fstat-no" title="function not covered" >function(){</span>
 <span class="cstat-no" title="statement not covered" >    firebase.auth().signOut().then(<span class="fstat-no" title="function not covered" >function() {</span></span>
     // Sign-out successful.
 <span class="cstat-no" title="statement not covered" >    console.log("Sign-out successful");</span>
@@ -220,7 +223,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 16 2016 01:36:56 GMT+0800 (台北標準時間)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 16 2016 05:42:04 GMT+0800 (台北標準時間)
 </div>
 </div>
 <script src="../prettify.js"></script>

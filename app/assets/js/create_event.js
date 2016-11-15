@@ -15,7 +15,7 @@ $(document).ready(function(){
 angular.module('teamform-create_event-app', ['firebase'])
 .controller('CreateEventCtrl', ['$scope', '$firebaseObject', '$firebaseArray', function($scope, $firebaseObject, $firebaseArray) {
 	
-	initalizeFirebase();
+
 
 	var eventRef, refPath;
 

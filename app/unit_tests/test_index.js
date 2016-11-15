@@ -1,13 +1,13 @@
-describe("IndexCtrl", function()
+/*describe("IndexCtrl", function()
 {
-	if(firebase.apps.length === 0) {
-		initalizeFirebase();
-	}
 		var $scope,IndexCtrl;
 		beforeEach(module('teamform-index-app'));
-		beforeEach(inject(function($rootScope,$controller, $firebaseObject, $firebaseArray,$window){
+		beforeEach(inject(function($rootScope,$controller, $firebaseObject_, $firebaseArray_,$window_){
 			$scope = $rootScope.$new();
-			IndexCtrl = $controller('IndexCtrl',{$scope : $scope, $firebaseObject: $firebaseObject, $firebaseArray: $firebaseArray, $window: $window});
+			$firebaseArray = $firebaseArray_;
+			$firebaseObject = $firebaseObject_;
+			$window = $window_;
+			IndexCtrl = $controller('IndexCtrl',{$scope : $scope, $firebaseObject: $firebaseObject_, $firebaseArray: $firebaseArray_, $window: $window_});
 		}));
 
 
@@ -24,13 +24,34 @@ describe("IndexCtrl", function()
 			expect($scope.logout()).toEqual(false);
 		});
 
+});*/
+
+
+describe('index.js', function() {
+   
+	var $scope, $IndexCtrl,firebaseObject,firebaseArray;	
+
+	beforeEach(module('teamform-index-app'));
+	beforeEach(inject(function($rootScope, $controller, $firebaseObject,$firebaseArray) {
+		$scope = $rootScope.$new();
+		$IndexCtrl = $controller('IndexCtrl', {$scope: $scope});
+		firebaseObject = $firebaseObject;
+		firebaseArray = $firebaseArray;
+	}));
+
+ it('should exist', function() {
+    expect($scope).toBeDefined();
+  });
 
 
 
 
 
 
+	it("test viewevent", function() {
+		expect($scope.viewevent("abc")).toEqual(true);
+		expect($scope.viewevent("")).toEqual(false);
+	});
 
-			
 
 });

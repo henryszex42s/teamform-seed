@@ -17,10 +17,15 @@ module.exports = function(config) {
 	exclude: [
 	],
 	preprocessors: {	 	
-		 'assets/js/site.js' : ['coverage'],		
+		 'assets/js/site.js' : ['coverage'],
+		 'assets/js/signin.js' : ['coverage'],
+		 'assets/js/signup.js' : ['coverage'],		
 		 'assets/js/index.js' : ['coverage'],
 		 'assets/js/event.js' : ['coverage'],
+		  'assets/js/create_event.js' : ['coverage'],
+		   'assets/js/manage_event.js' : ['coverage'],
 		 'assets/js/team.js' : ['coverage'],
+		 'assets/js/manage_team.js' : ['coverage'],
 		 'assets/js/member.js' : ['coverage']
 	},
 	reporters: ['progress', 'coverage'],
