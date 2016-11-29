@@ -57,6 +57,9 @@ angular.module('teamform-manage_team-app', ['firebase'])
 	$scope.EventName = eventName;
 	$scope.TeamName = teamName;
 
+	var teamtaginit = "NULL";
+	$scope.TeamTag = teamtaginit;
+
 	//Get The team info
 	refPath = "/event/" + eventName + "/team/" + teamName; 
 	ref = firebase.database().ref(refPath);
@@ -64,6 +67,7 @@ angular.module('teamform-manage_team-app', ['firebase'])
 
 	ref.set({
 		TeamName: teamName,
+		TeamTag: "NULL",
 		TeamLeader: "",
 		Description:"",
 		Forward:"",

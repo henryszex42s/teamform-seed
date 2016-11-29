@@ -1,6 +1,7 @@
 angular.module('teamform-team-app', ['firebase'])
 .controller('TeamCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '$window',
-    function($scope, $firebaseObject, $firebaseArray, $window) {
+    function($scope, $firebaseObject, $firebaseArray, $window) 
+{
 		
 	// Call Firebase initialization code defined in site.js
 	initalizeFirebase();
@@ -37,18 +38,18 @@ angular.module('teamform-team-app', ['firebase'])
 			
 			var current_team;
 
-	teamref.once("value",function(snapshot)
-	{
-		console.log(snapshot.val());
-		current_team = snapshot.val().NumMembers;
-		current_team = current_team +1;
-		console.log(current_team);
-		teamref.update(
-			{
-				'NumMembers' : current_team
-			}
-		);
-	})
+		teamref.once("value",function(snapshot)
+		{
+			console.log(snapshot.val());
+			current_team = snapshot.val().NumMembers;
+			current_team = current_team +1;
+			console.log(current_team);
+			teamref.update(
+				{
+					'NumMembers' : current_team
+				}
+			);
+		})
 		
 			
 
@@ -168,7 +169,7 @@ angular.module('teamform-team-app', ['firebase'])
           		    console.log('Your position is occupied by other player!!!');
 				}
 
-			});
+			})
 		} else 
 		{
 	  			// No user is signed in.
@@ -211,33 +212,48 @@ angular.module('teamform-team-app', ['firebase'])
 	$scope.addComment = function() {
 		//Do the team tag function!!!
 		var current_number;
-		if($scope.input.comment.indexOf('Pass')>= 0||$scope.input.comment.indexOf('pass')>=0||$scope.input.comment.indexOf('Move')>=0||$scope.input.comment.indexOf('move')>=0){
+		if($scope.input.comment.indexOf('Pass')>= 0||
+			$scope.input.comment.indexOf('pass')>=0||
+			$scope.input.comment.indexOf('Move')>=0||
+			$scope.input.comment.indexOf('move')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
 				current_number = snapshot.val().Pass_and_move;
 				current_number = current_number+1;
-				console.log(current_number);
+				
 				teamtagRef.update({
 						'Pass_and_move' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
+				console.log(current_number);
 			});
 		}
-		if($scope.input.comment.indexOf('Give')>= 0||$scope.input.comment.indexOf('give')>=0||$scope.input.comment.indexOf('Go')>=0||$scope.input.comment.indexOf('go')>=0){
+		if($scope.input.comment.indexOf('Give')>= 0||
+			$scope.input.comment.indexOf('give')>=0||
+			$scope.input.comment.indexOf('Go')>=0||
+			$scope.input.comment.indexOf('go')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
 				current_number = snapshot.val().Give_and_go;
 				current_number = current_number+1;
-				console.log(current_number);
+				
 				teamtagRef.update({
 						'Give_and_go' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
+				console.log(current_number);
 			});
 		}
-		if($scope.input.comment.indexOf('Long')>= 0||$scope.input.comment.indexOf('long')>=0||$scope.input.comment.indexOf('Through')>=0||$scope.input.comment.indexOf('through')>=0){
+		if($scope.input.comment.indexOf('Long')>= 0||
+			$scope.input.comment.indexOf('long')>=0||
+			$scope.input.comment.indexOf('Through')>=0||
+			$scope.input.comment.indexOf('through')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -248,9 +264,14 @@ angular.module('teamform-team-app', ['firebase'])
 						'The_long_through_ball' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Triangular')>= 0||$scope.input.comment.indexOf('triangular')>=0||$scope.input.comment.indexOf('Movement')>=0||$scope.input.comment.indexOf('movement')>=0){
+		if($scope.input.comment.indexOf('Triangular')>= 0||
+			$scope.input.comment.indexOf('triangular')>=0||
+			$scope.input.comment.indexOf('Movement')>=0||
+			$scope.input.comment.indexOf('movement')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -261,9 +282,14 @@ angular.module('teamform-team-app', ['firebase'])
 						'Triangular_movement' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Swap')>= 0||$scope.input.comment.indexOf('swap')>=0||$scope.input.comment.indexOf('Wing')>=0||$scope.input.comment.indexOf('wing')>=0){
+		if($scope.input.comment.indexOf('Swap')>= 0||
+			$scope.input.comment.indexOf('swap')>=0||
+			$scope.input.comment.indexOf('Wing')>=0||
+			$scope.input.comment.indexOf('wing')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -274,9 +300,14 @@ angular.module('teamform-team-app', ['firebase'])
 						'Swapping_of_the_wing_man' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Side')>= 0||$scope.input.comment.indexOf('side')>=0||$scope.input.comment.indexOf('Overload')>=0||$scope.input.comment.indexOf('overload')>=0){
+		if($scope.input.comment.indexOf('Side')>= 0||
+			$scope.input.comment.indexOf('side')>=0||
+			$scope.input.comment.indexOf('Overload')>=0||
+			$scope.input.comment.indexOf('overload')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -287,9 +318,12 @@ angular.module('teamform-team-app', ['firebase'])
 						'Strong_side_overloads' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Zone')>= 0||$scope.input.comment.indexOf('zone')>=0){
+		if($scope.input.comment.indexOf('Zone')>= 0||
+			$scope.input.comment.indexOf('zone')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -300,9 +334,12 @@ angular.module('teamform-team-app', ['firebase'])
 						'The_zone_defence' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Depth')>= 0||$scope.input.comment.indexOf('depth')>=0){
+		if($scope.input.comment.indexOf('Depth')>= 0||
+			$scope.input.comment.indexOf('depth')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -313,9 +350,12 @@ angular.module('teamform-team-app', ['firebase'])
 						'Depth_considerations' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-		if($scope.input.comment.indexOf('Man')>= 0||$scope.input.comment.indexOf('man')>=0){
+		if($scope.input.comment.indexOf('Man')>= 0||
+			$scope.input.comment.indexOf('man')>=0){
 			teamtagRef.once("value",function(snapshot)
 			{
 				console.log(snapshot.val());
@@ -326,10 +366,10 @@ angular.module('teamform-team-app', ['firebase'])
 						'The_man_to_man_defence' : current_number
 				});
 
+				//Call the findTeamTag function!!!
+				$scope.findTeamTag();
 			});
 		}
-
-
 
 		// update the date
 		if ( /*$scope.input.title != "" && */$scope.input.comment != "" ) {
@@ -339,9 +379,141 @@ angular.module('teamform-team-app', ['firebase'])
 			$scope.comment.$add($scope.input);
 		}
 	}
+
+	$scope.findTeamTag = function() {
+		var newTeamTag = "";
+		//Find the main team tag with the biggest count number
+		if($scope.teamtag.Pass_and_move>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.Pass_and_move>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Pass and move";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.Give_and_go>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.Give_and_go>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Give and go";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.The_long_through_ball>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.The_long_through_ball>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "The long through ball";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.Triangular_movement>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.Triangular_movement>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Triangular movement";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.Swapping_of_the_wing_man>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Swapping of the wing man";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.Strong_side_overloads>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.Strong_side_overloads>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Strong side overloads";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.The_zone_defence>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.Depth_considerations&&
+			$scope.teamtag.The_zone_defence>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "The zone defence";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.Depth_considerations>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.Depth_considerations>=$scope.teamtag.The_man_to_man_defence)
+		{
+			newTeamTag = "Depth considerations";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}
+		if($scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Pass_and_move&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Give_and_go&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.The_long_through_ball&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Triangular_movement&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Swapping_of_the_wing_man&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Strong_side_overloads&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.The_zone_defence&&
+			$scope.teamtag.The_man_to_man_defence>=$scope.teamtag.Depth_considerations)
+		{
+			newTeamTag = "The man to man defence";
+			ref.update({
+				'TeamTag' : newTeamTag
+			});
+		}	
+	}
 	
 		
 }]);
+
 function functionName()
 {
     $("#output").val("");
