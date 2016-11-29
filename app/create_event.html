@@ -57,8 +57,8 @@
 </head>
 
 <body>
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+      <!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom">
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
@@ -67,10 +67,13 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="index.html">HOME</a></li>
+					<li class="active"><a href="#">HOME</a></li>
 					<li><a href="#event">EVENTS</a></li>
 					<li><a href="#about">ABOUT US</a></li>
-					
+					<li><a href="member.html">Member</a></li>
+					<li><a href="create_event.html">ADMIN</a></li>
+					<li><a class="btn" href="signin.html">SIGN IN</a></li>
+					<li><a class="btn" href="signup.html">SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -80,58 +83,59 @@
 	<header id="head" class="secondary"></header>
 
 	<!-- container -->
-	<div class="container">
+	<div class="container" style="width:100%">
 
 
 		<div class="row">
 			<!-- Article main content -->
 			<div class="jumbotron top-space parallax">
-		<div class="container">
-		
-		             
-		    <div class="container">
-			
-			<h3 class="text-center thin"><p>CREATE EVENT</p></h3>
-			
-			<div class="row container-fluidspace text-center">
-			<em>Enter a name to create a event</em>
-			<input id="input_text" type="text" >
-			<button id="btn_event" type="button" class="btn btn-primary btn-sm" >Create</button>
-			</div> <!-- /row  -->
-		</div>
+				<div class="container" style="width:75%">        
+				    <div class="container">
+					
+						<h3 class="text-center thin"><p>CREATE EVENT</p></h3>
+						
+						<div class="row container-fluidspace text-center">
+							<em>Enter a name to create a event</em>
+							<input id="input_text" type="text" >
+							<button id="btn_event" type="button" class="btn btn-primary btn-sm" >Create</button>
+						</div> <!-- /row  -->
+					</div>
 	
 		
-	</div>	<!-- /container -->
+				</div>	<!-- /container -->
 
 		
 			
-			<h3 class="text-center thin name"><p>CURRENT EVENT</p></h3>
-			
-			<div class="row" ng-controller="CreateEventCtrl">
-			<div class="highlight">
-			<table border="1" style="width:100%">
-			<tr>
-			<td> Event Name </td><td> Holder </td><td>Team</td><td> Team Size </td><td></td></tr>
-
-			<tr ng-repeat="e in events" ng-repeat="t in team">
-			
-			<td>{{e.param.EventName}} </td>
-			<td>{{e.param.EventAdmin}} </td>
-			<td></td>
-			<td>{{e.param.TeamSize}}</td>
-			<td><button type="button" class="btn btn-primary btn-sm" ng-click ="modifyevent(e.param.EventName);">modify</button></td>
-			</tr>
-
-			</table>
-			</div>
-
+				<h3 class="text-center thin name"><p>CURRENT EVENT</p></h3>
 				
-			</div> <!-- /row  -->
-		
-		</div>
-			<footer id="footer" class="top-space">
+				<div class="row" ng-controller="CreateEventCtrl" style="position:relative;left:15%;right: 15%;width:70%">
+					<div class="highlight">
+						<table class="table" align="center" valign="center" style="width:100%" border="0px">
+							<tr class="success" align="center" valign="center">
+							<td> Event Name </td>
+							<td> Holder </td>
+							<td>Team</td>
+							<td> Team Size </td>
+							<td></td>
+							</tr>
 
-		<div class="footer1">
+							<tr class="warning" ng-repeat="e in events" ng-repeat="t in team" align="center" valign="center">
+							<td>{{e.param.EventName}} </td>
+							<td>{{e.param.EventAdmin}} </td>
+							<td></td>
+							<td>{{e.param.TeamSize}}</td>
+							<td><button type="button" class="btn btn-primary btn-sm" ng-click ="modifyevent(e.param.EventName);">modify</button></td>
+							</tr>
+
+						</table>
+					</div>
+				</div> <!-- /row  -->
+		
+			</div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="footer1" style="position: relative;bottom: 0px;width: 100%">
 			<div class="container">
 				<div class="row">
 					
@@ -162,9 +166,6 @@
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
-
-		
-
 	</footer>	
 </body>
 </html>

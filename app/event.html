@@ -78,16 +78,17 @@
 
 	<header id="head" class="secondary"></header>
 
-	 <div class="text-center">
-      <h1>Event : {{eventinfo.EventName}} Page</h1>
+	<div class="text-center">
+    	<h1>Event : {{eventinfo.EventName}} Page</h1>
 	  
 	 
 					 
-      <h2 id="text_event_name"></h2>
+      	<h2 id="text_event_name"></h2>
 
-      <div>
+     	<div>
 
-         <div class="row">
+        	<div class="row">
+
 
          	 <input type="text" name="team_name" ng-model="input.teamname"><br><br>
              <button id ="btn_create_team " type="button" class="btn btn-primary" ng-click="createteam()" >Create new Team</button>
@@ -96,42 +97,83 @@
 
 
 
+
             </div>
             
-             <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-2 col-xs-2"></div>
 
-         </div>
+        </div>
      
 
-         <hr>
+        <hr>
 
-		<table align="center" border="1">
+		<table class="table table-striped" align="center" style="width:80%" border="0px">
 			<tr>
-			<td> Team Name </td>
-			<td> Leader </td>
-			<td> No.Members </td>
-			<td> GoalKeeper </td>
-			<td> LeftBack </td>
-			<td> Midfield </td>
-			<td> RightBack </td>
-			<td>	</td></tr>
-
-			<tr ng-repeat="t in teams | orderBy : 'NumMembers'">
-			<td>{{t.TeamName}} </td>
-			<td>{{t.TeamLeader}} </td>
-			<td>{{t.NumMembers}}</td>
-			<td>{{t.GoalKeeper}}</td>
-			<td>{{t.LeftBack}}</td>
-			<td>{{t.Midfield}}</td>
-			<td>{{t.RightBack}}</td>
-
-			<td><button type="button" class="btn btn-primary btn-sm" ng-click ="viewteam(t.TeamName);">More Info</button></td>
+				<td>Team Name</td>
+				<td>Team Tag</td>
+				<td>Leader</td>
+				<td>No.Members</td>
+				<td>GoalKeeper</td>
+				<td>LeftBack</td>
+				<td>Midfield</td>
+				<td>RightBack</td>
+				<td></td>
 			</tr>
 
-			</table>
+			<tr ng-repeat="t in teams | orderBy : 'NumMembers'">
+				<td>{{t.TeamName}}</td>
+				<td>{{t.TeamTag}}</td>
+				<td>{{t.TeamLeader}}</td>
+				<td>{{t.NumMembers}}</td>
+				<td>{{t.GoalKeeper}}</td>
+				<td>{{t.LeftBack}}</td>
+				<td>{{t.Midfield}}</td>
+				<td>{{t.RightBack}}</td>
+				<td><button type="button" class="btn btn-primary btn-sm" ng-click ="viewteam(t.TeamName);">More Info</button></td>
+			</tr>
+
+		</table>
 
 
-      </div>
-   </div>
+    </div>
+    
+  	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>Light of Wisdom<br>
+								<a href="mailto:#">lightofwisdom3111@gmail.com</a><br>
+								<br>
+								"phone: 31800000"
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Follow us</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+			
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		
+
+	</footer>
 </body>
 </html>
